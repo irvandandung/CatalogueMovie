@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Katalog Film</string>
+    <string name="poster_movie">Poster Film</string>
+    <string name="date_relealesed">Tanggal Rilis</string>
+    <string name="star_icon">Ikon</string>
+    <string name="user_score">86%</string>
+    <string name="timer_icon">jam</string>
+    <string name="runtime">2j 10m</string>
+    <string name="tvshow_poster">Poster tv show</string>
+
+    <string name="movies">Film</string>
+    <string name="tv_show">Film TV</string>
+    <string name="title">Judul Film</string>
+    <string name="status">aktif</string>
+    <string name="language">Inggris</string>
+    <string name="budget">$14</string>
+    <string name="tittle_budget">Biaya Film</string>
+    <string name="title_revenue">Pendapatan</string>
+    <string name="revenue">$14</string>
+    <string name="genres">Genre</string>
+    <string name="genre_detail">Horror</string>
+    <string name="overview">Lorem Ipsum blalnal</string>
+    <string name="title_crew">Kru</string>
+    <string name="open">Kamu membuka</string>
+    <string name="change_language_settings">Buka Bahasa</string>
+    <string name="codelang">id-ID</string>
+    <string name="favorite">Kesukaan</string>
+    <string name="save_this_movie">simpan ke kesukaan</string>
+    <string name="delete_this_movie">hapus dari kesukaan</string>
+    <string name="save_this_serial">simpan ke kesukaan</string>
+    <string name="delete_this_serial">hapus dari kesukaan</string>
+    <string name="btsearchtext">Cari</string>
+    <string name="search_movie_in_here">Cari movie di sini</string>
+    <string name="search_tv_show_in_here">Cari serial tv di sini</string>
+    <string name="empty_text">null</string>
+    <string name="appwidget_text">Katalog Film</string>
+    <string name="add_widget">Add widget</string>
+    <string name="seven_morning_notif_title">Buka MovieDbmu</string>
+    <string name="seven_morning_notif_message">Ayo buka Aplikasimu, cek film menarik di sini</string>
+    <string name="daily_reminder_setting_title">Pengingat harian</string>
+    <string name="daily_reminder_setting_message">Aku akan mengucapkan selamat pagi padamu!</string>
+    <string name="release_reminder_setting_title">Pengingat film rilis</string>
+    <string name="release_reminder_setting_message">Kita akan memberikanmu film yang rilis pada hari ini</string>
+    <string name="setting_reminder">Pengaturan pengingat</string>
+    <string name="toas_no_rem">Pengingat Harian tidak Aktif</string>
+    <string name="toast_rem">Pengingat Harian Aktif</string>
+    <string name="eightthemorning">Ada film terbaru nih</string>
+    <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CatalogueMovie</string>
+    <string name="poster_movie">Movie Poster</string>
+    <string name="date_relealesed">date realease</string>
+    <string name="star_icon">Icon</string>
+    <string name="user_score">86%</string>
+    <string name="timer_icon">Hours</string>
+    <string name="runtime">2h 10m</string>
+    <string name="tvshow_poster">tv show poster</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="movies">Movies</string>
+    <string name="tv_show">TV Show</string>
+    <string name="title">Title Movie</string>
+    <string name="status">active</string>
+    <string name="language">English</string>
+    <string name="budget">$14</string>
+    <string name="tittle_budget">Budget Movie</string>
+    <string name="title_revenue">Revenue</string>
+    <string name="revenue">$14</string>
+    <string name="genres">Genre</string>
+    <string name="genre_detail">Horror</string>
+    <string name="overview">Lorem Ipsum blalnal</string>
+    <string name="title_crew">Crew</string>
+    <string name="open">You Open</string>
+    <string name="change_language_settings">Open Language</string>
+    <string name="codelang">en-US</string>
+    <string name="favorite">Favorite</string>
+    <string name="save_this_movie">save to favorite</string>
+    <string name="delete_this_movie">delete from favorite</string>
+    <string name="save_this_serial">save to favorite</string>
+    <string name="delete_this_serial">delete from favorite</string>
+    <string name="btsearchtext">Search</string>
+    <string name="search_movie_in_here">Search movie in here</string>
+    <string name="search_tv_show_in_here">Search tv show in here</string>
+    <string name="empty_text">null</string>
+    <string name="appwidget_text">CatalogueMovie</string>
+    <string name="add_widget">Add widget</string>
+    <string name="seven_morning_notif_title">Open Your MovieDB</string>
+    <string name="seven_morning_notif_message">Lets go Open your MovieDB, check amazing movie</string>
+    <string name="daily_reminder_setting_title">Daily Reminder</string>
+    <string name="daily_reminder_setting_message">I will say hello to you every morning. Don\'t miss every update!</string>
+    <string name="release_reminder_setting_title">Release Reminder</string>
+    <string name="release_reminder_setting_message">We will give you notification for daily released movie</string>
+    <string name="setting_reminder">Setting Reminder</string>
+    <string name="toas_no_rem">Daily Reminder is Not Active</string>
+    <string name="toast_rem">Daily Reminder is Active</string>
+    <string name="eightthemorning">Ada film terbaru nih</string>
+    <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
+</resources>
