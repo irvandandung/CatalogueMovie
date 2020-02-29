@@ -31,14 +31,14 @@ class SevenMorningReminder : BroadcastReceiver(){
         val CHANNEL_ID = "CHANNEL_SEVEN"
         val CHANNEL_NAME = "7 in the morning notification"
 
-        val notificationintent = Intent(context, MainActivity::class.java)
-        val pendingIntent = PendingIntent.getActivity(context, 0, notificationintent, 0)
+        val notificationIntent = Intent(context, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0)
 
-        val notificationtManagerCompat = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val     notificationManagerCompat = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setContentIntent(pendingIntent)
-            .setSmallIcon(R.drawable.ic_live_tv_black_24dp)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle(title)
             .setContentText(message)
             .setColor(ContextCompat.getColor(context, android.R.color.black))
@@ -46,40 +46,42 @@ class SevenMorningReminder : BroadcastReceiver(){
             .setSound(alarmSound)
             .setAutoCancel(true)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val channel = NotificationChannel(
-                CHANNEL_ID,
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            val channel = NotificationChannel(CHANNEL_ID,
                 CHANNEL_NAME,
-                NotificationManager.IMPORTANCE_DEFAULT
-            )
+                NotificationManager.IMPORTANCE_DEFAULT)
 
             channel.enableVibration(true)
             channel.vibrationPattern = longArrayOf(1000, 1000, 1000, 1000, 1000)
 
             builder.setChannelId(CHANNEL_ID)
 
-            notificationtManagerCompat.createNotificationChannel(channel)
+            notificationManagerCompat.createNotificationChannel(channel)
+
         }
 
         val notification = builder.build()
-        notificationtManagerCompat.notify(notifId, notification)
+        notificationManagerCompat.notify(notifId, notification)
     }
 
-    fun setRepeatingAlarm(context: Context?){
-        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    fun setRepeatingAlarm(context: Context) {
+
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, SevenMorningReminder::class.java)
 
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, 12)
+        calendar.set(Calendar.HOUR_OF_DAY, 7)
         calendar.set(Calendar.MINUTE, 0)
         calendar.set(Calendar.SECOND, 0)
 
         val pendingIntent = PendingIntent.getBroadcast(context, REQUEST_CODE, intent, 0)
         alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent)
+
     }
 
-    fun cancelAlarm(context: Context?){
-        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    fun cancelAlarm(context: Context) {
+        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, SevenMorningReminder::class.java)
 
         val pendingIntent = PendingIntent.getBroadcast(context, REQUEST_CODE, intent, 0)
@@ -88,10 +90,10 @@ class SevenMorningReminder : BroadcastReceiver(){
         alarmManager.cancel(pendingIntent)
     }
 
-    fun isAlarmSet(context: Context?): Boolean{
+    fun isAlarmSet(context: Context): Boolean {
         val intent = Intent(context, SevenMorningReminder::class.java)
 
-        return  PendingIntent.getBroadcast(context, REQUEST_CODE, intent, PendingIntent.FLAG_NO_CREATE) != null
+        return PendingIntent.getBroadcast(context, REQUEST_CODE, intent, PendingIntent.FLAG_NO_CREATE) != null
     }
 
 }

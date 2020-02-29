@@ -47,4 +47,6 @@
     <string name="toast_rem">Pengingat Harian Aktif</string>
     <string name="eightthemorning">Ada film terbaru nih</string>
     <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
+    <string name="toast_rem_daily">pengingat rilis film aktif</string>
+    <string name="toas_no_rem_daily">pengingat rilis film tidak aktif</string>
 </resources>

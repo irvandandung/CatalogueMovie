@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cataloguemovie.Helper.getCurrentDate
+import com.example.cataloguemovie.MainActivity
 import com.example.cataloguemovie.Movies.Adapter.ListMoviesAdapter
 import com.example.cataloguemovie.Movies.Adapter.OnItemClickCallback
 import com.example.cataloguemovie.Movies.Data.Movies
@@ -25,6 +26,7 @@ class MainReleaseActivity : AppCompatActivity() {
     private lateinit var viewModelReleaseToday: ViewModelReleaseToday
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setContentView(R.layout.activity_main2)
         code_lang = getString(R.string.codelang)
         showLoading(true)
@@ -64,4 +66,16 @@ class MainReleaseActivity : AppCompatActivity() {
             movieView.visibility = View.GONE
         }
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+    override fun onBackPressed() {
+        val i = Intent(this, MainActivity::class.java)
+        startActivity(i)
+        super.onBackPressed()
+    }
+
 }

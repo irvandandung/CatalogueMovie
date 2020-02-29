@@ -37,8 +37,10 @@ class SettingReminder : AppCompatActivity() {
 
         releaseTodaySwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
+                Toast.makeText(this, getString(R.string.toast_rem_daily), Toast.LENGTH_LONG).show()
                 releaseReminder.setRepeatingAlarm(this)
             } else {
+                Toast.makeText(this, getString(R.string.toas_no_rem_daily), Toast.LENGTH_LONG).show()
                 releaseReminder.cancelAlarm(this)
             }
         }

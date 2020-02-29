@@ -3,6 +3,8 @@
           package="com.example.cataloguemovie">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
             android:allowBackup="true"
@@ -45,6 +47,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <receiver android:name=".Reminder.SevenMorningReminder"
+                  android:enabled="true"
+                  android:exported="true">
+        </receiver>
+        <receiver android:name=".Reminder.EightMorningReminder"
+                  android:enabled="true"
+                  android:exported="true">
+        </receiver>
     </application>
 
 </manifest>

@@ -70,7 +70,7 @@ class EightMorningReminder : BroadcastReceiver(){
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, EightMorningReminder::class.java)
         val calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, 12)
+        calendar.set(Calendar.HOUR_OF_DAY, 8)
         calendar.set(Calendar.MINUTE, 0)
         calendar.set(Calendar.SECOND, 0)
 

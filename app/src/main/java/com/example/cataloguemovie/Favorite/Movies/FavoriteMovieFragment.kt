@@ -34,6 +34,7 @@ class FavoriteMovieFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        activity?.actionBar?.setDisplayShowHomeEnabled(false)
         val moviedao = RoomMovieConnect.getInstance(activity!!.applicationContext)
         val listmovie = moviedao?.movieDao()?.alldatamovie()
         listmovie?.observe(this, Observer { moviee ->

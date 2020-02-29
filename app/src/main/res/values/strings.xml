@@ -48,5 +48,7 @@
     <string name="toast_rem">Release Reminder is Active</string>
     <string name="eightthemorning">Ada film terbaru nih</string>
     <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
+    <string name="toast_rem_daily">release today active</string>
+    <string name="toas_no_rem_daily">release is not active</string>
 
 </resources>
