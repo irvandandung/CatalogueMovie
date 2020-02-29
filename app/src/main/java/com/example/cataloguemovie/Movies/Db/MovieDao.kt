@@ -1,5 +1,6 @@
 package com.example.cataloguemovie.Movies.Db
 
+import android.database.Cursor
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.cataloguemovie.TvShows.Db.TvShowEntity
@@ -17,4 +18,8 @@ interface MovieDao {
 
     @Query("SELECT * from MoviesTable")
     fun alldatamoviewidget(): List<MovieEntity>
+
+    //for Content Provider
+    @Query("SELECT * from MoviesTable")
+    fun selectAll(): Cursor
 }
