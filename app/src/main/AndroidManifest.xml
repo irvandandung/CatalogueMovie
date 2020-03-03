@@ -5,11 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <permission android:name="com.example.cataloguemovie.READ_DATABASE"
-                android:protectionLevel="normal"/>
-    <permission android:name="com.example.cataloguemovie.WRITE_DATABASE"
-                android:protectionLevel="normal"/>
 
+    <permission
+            android:name="com.example.cataloguemovie.READ_DATABASE"
+            android:protectionLevel="normal"/>
+    <permission
+            android:name="com.example.cataloguemovie.WRITE_DATABASE"
+            android:protectionLevel="normal"/>
 
     <application
             android:allowBackup="true"
@@ -18,21 +20,22 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".TvShows.Search.SearchTvShow">
+        </activity>
+        <activity android:name=".Movies.Search.SearchMovie">
+        </activity>
         <provider
                 android:name=".Provider.MovieProvider"
                 android:authorities="com.example.cataloguemovie"
                 android:enabled="true"
                 android:exported="true"
                 android:readPermission="com.example.cataloguemovie.READ_DATABASE"
-                android:writePermission="com.example.cataloguemovie.WRITE_DATABASE"
-        >
+                android:writePermission="com.example.cataloguemovie.WRITE_DATABASE">
         </provider>
-
         <activity android:name=".ReleaseToday.MainReleaseActivity">
         </activity>
         <activity android:name=".SettingReminder">
         </activity>
-
         <receiver android:name=".Widget.MovieBanner">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
@@ -42,11 +45,9 @@
                     android:name="android.appwidget.provider"
                     android:resource="@xml/movie_banner_info"/>
         </receiver>
-
         <service
                 android:name=".Widget.StackWidgetService"
                 android:permission="android.permission.BIND_REMOTEVIEWS"/>
-
         <activity android:name=".Favorite.Movies.DetailFavoriteMovie">
         </activity>
         <activity android:name=".Favorite.TvShows.DetailFavoriteActivity">
@@ -62,7 +63,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <receiver
                 android:name=".Reminder.SevenMorningReminder"
                 android:enabled="true"
@@ -74,5 +74,4 @@
                 android:exported="true">
         </receiver>
     </application>
-
 </manifest>

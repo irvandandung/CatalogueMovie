@@ -16,9 +16,6 @@ import com.example.cataloguemovie.Movies.Db.RoomMovieConnect
 
 import com.example.cataloguemovie.R
 import kotlinx.android.synthetic.main.fragment_favorite_movie.*
-import kotlinx.android.synthetic.main.fragment_favorite_tv_show.*
-import kotlinx.android.synthetic.main.fragment_movies.*
-import kotlinx.android.synthetic.main.fragment_movies.rv_movies
 
 
 class FavoriteMovieFragment : Fragment() {

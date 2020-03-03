@@ -30,12 +30,8 @@
     <string name="delete_this_movie">delete this movie</string>
     <string name="save_this_serial">save this serial</string>
     <string name="delete_this_serial">Delete this serial</string>
-    <string name="btsearchtext">Search</string>
-    <string name="search_movie_in_here">Search movie in here</string>
-    <string name="search_tv_show_in_here">Search tv show in here</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="empty_text">null</string>
+    <string name="appwidget_text">Catalogue Movie</string>
+    <string name="empty_text">Loading...</string>
     <string name="seven_morning_notif_title">Buka MovieDbmu</string>
     <string name="seven_morning_notif_message">Ayo buka Aplikasimu, cek film menarik di sini</string>
     <string name="daily_reminder_setting_title">Daily Reminder</string>
@@ -50,5 +46,12 @@
     <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
     <string name="toast_rem_daily">release today active</string>
     <string name="toas_no_rem_daily">release is not active</string>
+    <string name="successinput">input data success</string>
+    <string name="successdelete">success delete data</string>
+    <string name="search">Search</string>
+    <string name="search_movie">Search Movie</string>
+    <string name="search_tv_show">Search Tv Show</string>
+    <string name="cancel">Cancel</string>
+    <string name="titlerilis">Realese Movie</string>
 
 </resources>

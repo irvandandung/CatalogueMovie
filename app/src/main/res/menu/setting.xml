@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+            app:showAsAction="never"
+            android:icon="@drawable/ic_search_black_24dp"
+            android:title="@string/search">
+        <menu>
+            <item
+                    android:icon="@drawable/ic_live_tv_black_24dp"
+                    android:id="@+id/searchMovie"
+                    android:title="@string/search_movie"/>
+            <item
+                    android:icon="@drawable/ic_live"
+                    android:id="@+id/searchTvShow"
+                    android:title="@string/search_tv_show"/>
+        </menu>
+    </item>
+    <item
             android:id="@+id/action_change_settings"
             android:title="@string/change_language_settings"
             app:showAsAction="never"/>

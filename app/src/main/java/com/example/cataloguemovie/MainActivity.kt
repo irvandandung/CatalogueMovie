@@ -10,10 +10,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.cataloguemovie.Movies.Search.SearchMovieDialog
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.navigation_movies, R.id.navigation_tv_show
         ).build()
-
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -42,7 +41,24 @@ class MainActivity : AppCompatActivity() {
         }else if (item.itemId == R.id.reminder){
             val intent = Intent(this, SettingReminder::class.java)
             startActivity(intent)
+        }else if(item.itemId == R.id.searchMovie){
+            openMovieDialog()
+        }else if (item.itemId == R.id.searchTvShow){
+            openTvShowDialog()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun openTvShowDialog() {
+        val titlemovie = getString(R.string.search_tv_show)
+        val newFragment = SearchMovieDialog(titlemovie)
+        newFragment.show(supportFragmentManager, "SearchMovie")
+    }
+
+
+    private fun openMovieDialog(){
+        val titlemovie = getString(R.string.search_movie)
+        val newFragment = SearchMovieDialog(titlemovie)
+        newFragment.show(supportFragmentManager, "SearchMovie")
     }
 }

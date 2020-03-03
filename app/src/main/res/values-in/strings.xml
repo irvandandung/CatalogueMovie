@@ -30,13 +30,9 @@
     <string name="delete_this_movie">hapus dari kesukaan</string>
     <string name="save_this_serial">simpan ke kesukaan</string>
     <string name="delete_this_serial">hapus dari kesukaan</string>
-    <string name="btsearchtext">Cari</string>
-    <string name="search_movie_in_here">Cari movie di sini</string>
-    <string name="search_tv_show_in_here">Cari serial tv di sini</string>
-    <string name="empty_text">null</string>
+    <string name="empty_text">Menunggu...</string>
     <string name="appwidget_text">Katalog Film</string>
-    <string name="add_widget">Add widget</string>
-    <string name="seven_morning_notif_title">Buka MovieDbmu</string>
+    <string name="seven_morning_notif_title">Pagi, Buka MovieDbmu</string>
     <string name="seven_morning_notif_message">Ayo buka Aplikasimu, cek film menarik di sini</string>
     <string name="daily_reminder_setting_title">Pengingat harian</string>
     <string name="daily_reminder_setting_message">Aku akan mengucapkan selamat pagi padamu!</string>
@@ -45,8 +41,15 @@
     <string name="setting_reminder">Pengaturan pengingat</string>
     <string name="toas_no_rem">Pengingat Harian tidak Aktif</string>
     <string name="toast_rem">Pengingat Harian Aktif</string>
-    <string name="eightthemorning">Ada film terbaru nih</string>
-    <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
+    <string name="eightthemorning">Ada film Rilis terbaru nih</string>
+    <string name="eightthemorningmessage">Klik untuk melihat detil list rilis film</string>
     <string name="toast_rem_daily">pengingat rilis film aktif</string>
     <string name="toas_no_rem_daily">pengingat rilis film tidak aktif</string>
+    <string name="successinput">input data success</string>
+    <string name="successdelete">success hapus data</string>
+    <string name="search">Cari</string>
+    <string name="search_movie">Cari Film</string>
+    <string name="search_tv_show">Cari Serial Tv</string>
+    <string name="cancel">Batal</string>
+    <string name="titlerilis">Rilis Film *</string>
 </resources>

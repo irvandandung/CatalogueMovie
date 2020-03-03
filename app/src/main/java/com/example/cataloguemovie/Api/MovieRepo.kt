@@ -1,6 +1,5 @@
 package com.example.cataloguemovie.Api
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.cataloguemovie.Movies.Data.DataMovies
@@ -22,7 +21,6 @@ class MovieRepo {
             override fun onResponse(call: Call<DataMovies>, response: Response<DataMovies>) {
                 livdata.postValue(response.body())
             }
-
         })
 
         return livdata
@@ -63,11 +61,11 @@ class MovieRepo {
             override fun onFailure(call: Call<DataMovies>, t: Throwable) {
                 livdata.postValue(null)
             }
-
             override fun onResponse(call: Call<DataMovies>, response: Response<DataMovies>) {
                 livdata.postValue(response.body())
             }
         })
         return livdata
     }
+
 }

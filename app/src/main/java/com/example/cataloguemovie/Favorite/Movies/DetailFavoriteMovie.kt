@@ -46,7 +46,7 @@ class DetailFavoriteMovie : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 tvmovie?.movieDao()?.delete(moviedata)
             }
-            Toast.makeText(this, "success delete data", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.successdelete), Toast.LENGTH_LONG).show()
         }
     }
 

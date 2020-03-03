@@ -31,13 +31,9 @@
     <string name="delete_this_movie">delete from favorite</string>
     <string name="save_this_serial">save to favorite</string>
     <string name="delete_this_serial">delete from favorite</string>
-    <string name="btsearchtext">Search</string>
-    <string name="search_movie_in_here">Search movie in here</string>
-    <string name="search_tv_show_in_here">Search tv show in here</string>
-    <string name="empty_text">null</string>
-    <string name="appwidget_text">CatalogueMovie</string>
-    <string name="add_widget">Add widget</string>
-    <string name="seven_morning_notif_title">Open Your MovieDB</string>
+    <string name="empty_text">Loading...</string>
+    <string name="appwidget_text">Catalogue Movie</string>
+    <string name="seven_morning_notif_title">Morning, Open Your MovieDB</string>
     <string name="seven_morning_notif_message">Lets go Open your MovieDB, check amazing movie</string>
     <string name="daily_reminder_setting_title">Daily Reminder</string>
     <string name="daily_reminder_setting_message">I will say hello to you every morning. Don\'t miss every update!</string>
@@ -46,8 +42,15 @@
     <string name="setting_reminder">Setting Reminder</string>
     <string name="toas_no_rem">Daily Reminder is Not Active</string>
     <string name="toast_rem">Daily Reminder is Active</string>
-    <string name="eightthemorning">Ada film terbaru nih</string>
-    <string name="eightthemorningmessage">Lihat film terbaru di MovieDB</string>
+    <string name="eightthemorning">Wow, New realese movie in here</string>
+    <string name="eightthemorningmessage">Click for look detail list realese movie!</string>
     <string name="toast_rem_daily">release today active</string>
     <string name="toas_no_rem_daily">release is not active</string>
+    <string name="successinput">input data success</string>
+    <string name="successdelete">success delete data</string>
+    <string name="search">Search</string>
+    <string name="search_movie">Search Movie</string>
+    <string name="search_tv_show">Search Tv Show</string>
+    <string name="cancel">Cancel</string>
+    <string name="titlerilis">Realese Movie *</string>
 </resources>

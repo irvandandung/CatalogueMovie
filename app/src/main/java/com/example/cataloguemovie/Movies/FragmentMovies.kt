@@ -1,12 +1,7 @@
 package com.example.cataloguemovie.Movies
 
-
-import android.app.Activity
 import android.content.Intent
-import android.content.pm.ActivityInfo
-import android.content.res.Configuration
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,19 +14,15 @@ import com.example.cataloguemovie.Movies.Adapter.ListMoviesAdapter
 import com.example.cataloguemovie.Movies.Adapter.OnItemClickCallback
 import com.example.cataloguemovie.Movies.Data.Movies
 import com.example.cataloguemovie.Movies.Detail.DetailMovies
-import com.example.cataloguemovie.Movies.Viewmodel.ViewModelMovieSearch
-import com.example.cataloguemovie.Movies.Viewmodel.ViewModelMovieSearchFactory
 import com.example.cataloguemovie.Movies.Viewmodel.Viewlistmovie
 import com.example.cataloguemovie.Movies.Viewmodel.Viewlistmoviefactory
 import com.example.cataloguemovie.R
 import kotlinx.android.synthetic.main.fragment_movies.*
-import kotlinx.android.synthetic.main.fragment_movies.view.*
 
 class FragmentMovies : Fragment() {
     private var list = ArrayList<Movies>()
     lateinit var code_lang: String
     private lateinit var viewModel: Viewlistmovie
-    private lateinit var viewModelSearch : ViewModelMovieSearch
     private lateinit var listMoviesAdapter: ListMoviesAdapter
     private var isResponse = false
     override fun onCreateView(
@@ -62,29 +53,7 @@ class FragmentMovies : Fragment() {
         rv_movies.setHasFixedSize(true)
         showLoading(true)
         code_lang = getString(R.string.codelang)
-        view.Bt_search.setOnClickListener {
-            showLoading(true)
-            getDatawithquery(code_lang, view)
-        }
         getAlldataOnFragment(code_lang)
-    }
-
-    private fun getDatawithquery(codelang: String, view: View){
-        val query : String = view.Et_search.text.toString()
-//        Log.d("query", query)
-        viewModelSearch = ViewModelProviders.of(this, ViewModelMovieSearchFactory(query, codelang)).get(ViewModelMovieSearch::class.java)
-        viewModelSearch.setDetailS(query, codelang)
-        viewModelSearch.getDetailS().observe(this, Observer {
-            movieItem ->
-            isResponse = true
-            if (movieItem != null) {
-                list = movieItem.movie as ArrayList<Movies>
-                showLoading(false)
-                showRecyclerList()
-            } else {
-                Toast.makeText(context, "Data tidak ada atau internet mati", Toast.LENGTH_LONG).show()
-            }
-        })
     }
 
     private fun showRecyclerList() {

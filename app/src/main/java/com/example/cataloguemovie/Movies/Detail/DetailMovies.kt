@@ -87,7 +87,7 @@ class DetailMovies : AppCompatActivity() {
                             )
                         )
                     }
-                    Toast.makeText(this, "input data success", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, getString(R.string.successinput), Toast.LENGTH_LONG).show()
                 }
             } else {
                 Toast.makeText(this, "Data Kosong atau internet mati", Toast.LENGTH_LONG).show()

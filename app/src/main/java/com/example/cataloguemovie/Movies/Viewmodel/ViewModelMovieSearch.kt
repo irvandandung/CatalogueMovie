@@ -10,22 +10,22 @@ class ViewModelMovieSearch(query : String, language:String) : ViewModel(){
     val movieRepo = MovieRepo()
     lateinit var searchmovie : LiveData<DataMovies>
 
-//    init {
-//        getDetailSerch(query, language)
-//    }
-
-//    fun getDetailSerch(query : String, language: String){
-//            searchmovie = movieRepo.getSearchMovie(query = query, language = language)
-//    }
-
-
-    fun getDetailS() : LiveData<DataMovies>{
-        return searchmovie
+    init {
+        getDetailSerch(query, language)
     }
 
-    fun setDetailS(query : String, language: String){
-        searchmovie = movieRepo.getSearchMovie(query = query, language = language)
+    fun getDetailSerch(query : String, language: String){
+            searchmovie = movieRepo.getSearchMovie(query = query, language = language)
     }
+
+
+//    fun getDetailS() : LiveData<DataMovies>{
+//        return searchmovie
+//    }
+//
+//    fun setDetailS(query : String, language: String){
+//        searchmovie = movieRepo.getSearchMovie(query = query, language = language)
+//    }
 }
 
 class ViewModelMovieSearchFactory(private val query: String, private val language: String) : ViewModelProvider.NewInstanceFactory(){

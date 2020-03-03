@@ -4,29 +4,63 @@ import android.app.*
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
+import com.example.cataloguemovie.Api.ApiServices
+import com.example.cataloguemovie.Api.Retrofitbuilder
+import com.example.cataloguemovie.Helper.getCurrentDate
+import com.example.cataloguemovie.Movies.Data.DataMovies
+import com.example.cataloguemovie.Movies.Data.Movies
 import com.example.cataloguemovie.R
 import com.example.cataloguemovie.ReleaseToday.MainReleaseActivity
+import retrofit2.Call
+import retrofit2.Response
 import java.util.*
 
 class EightMorningReminder : BroadcastReceiver(){
+    private var apidiscover = Retrofitbuilder().createreleasemovie(ApiServices::class.java)
     private val REQUEST_CODE = 102
     override fun onReceive(context : Context?, p1: Intent?) {
         val title = context?.getString(R.string.eightthemorning)
         val message = context?.getString(R.string.eightthemorningmessage)
         val notifId = REQUEST_CODE
-
-        showNotification(context, title, message, notifId)
+        getRealesemovie(context, title, message, notifId)
     }
 
-    private fun showNotification(context: Context?, title: String?, message: String?, notifId: Int) {
+    private fun getRealesemovie(context: Context?, title: String?, message: String?, notifId: Int) {
+        apidiscover.getMovieReleaseToday(language = "en-US", releasegte = getCurrentDate(), releaselte = getCurrentDate()).enqueue(object : retrofit2.Callback<DataMovies>{
+            override fun onFailure(call: Call<DataMovies>, t: Throwable) {
+                Log.d("ErrorRealeseMovie", t.message+"\n ora dadi")
+            }
+
+            override fun onResponse(call: Call<DataMovies>, response: Response<DataMovies>) {
+                showNotification(context, title, message, notifId, response.body())
+            }
+        })
+    }
+
+    private fun showNotification(
+        context: Context?,
+        title: String?,
+        message: String?,
+        notifId: Int,
+        list : DataMovies?
+    ) {
+
         val CHANNEL_ID = "CHANNEL_EIGHT"
         val CHANNEL_NAME = "8 in the morning notification"
-
+        val listMovie : List<Movies>
+        var content =""
+        listMovie = list?.movie!!
+        listMovie.map {
+            content += "${it.title}\n"
+        }
         val notificationIntent = Intent(context, MainReleaseActivity::class.java)
+        notificationIntent.putExtra(MainReleaseActivity.DATE_REALESE, getCurrentDate())
         val pendingIntent = TaskStackBuilder.create(context)
             .addParentStack(MainReleaseActivity::class.java)
             .addNextIntent(notificationIntent)
@@ -36,8 +70,10 @@ class EightMorningReminder : BroadcastReceiver(){
         val alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setContentTitle(title)
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
-            .setContentText(message)
+            .setSmallIcon(R.drawable.ic_live_tv_black_24dp)
+            .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.ic_live_tv_black_24dp))
+            .setStyle(NotificationCompat.BigTextStyle()
+                .bigText("*"+message+"*\n"+content))
             .setColor(ContextCompat.getColor(context, android.R.color.black))
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
             .setSound(alarmSound)

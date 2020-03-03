@@ -15,8 +15,6 @@ import kotlinx.android.synthetic.main.activity_detail_favorite.tv_item_budget
 import kotlinx.android.synthetic.main.activity_detail_favorite.tv_item_genre
 import kotlinx.android.synthetic.main.activity_detail_favorite.tv_item_language
 import kotlinx.android.synthetic.main.activity_detail_favorite.tv_item_revenue
-import kotlinx.android.synthetic.main.activity_detail_favorite_movie.*
-import kotlinx.android.synthetic.main.fragment_favorite_tv_show.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -52,7 +50,7 @@ class DetailFavoriteActivity : AppCompatActivity() {
             GlobalScope.launch(Dispatchers.IO) {
                 tvshowdao.tvshowDao().delete(tvshowentity = tvshow)
             }
-            Toast.makeText(this, "success delete data", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.successdelete), Toast.LENGTH_LONG).show()
         }
     }
 

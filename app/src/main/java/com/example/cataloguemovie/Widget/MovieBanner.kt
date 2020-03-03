@@ -87,9 +87,9 @@ internal class StackRemoteViewsFactory(private val mContext: Context) : RemoteVi
         return try {
             val url = URL(src)
             val connection = url.openConnection() as HttpURLConnection
-            connection.setDoInput(true)
+            connection.doInput = true
             connection.connect()
-            val input = connection.getInputStream()
+            val input = connection.inputStream
             BitmapFactory.decodeStream(input)
         } catch (e: IOException) {
             // Log exception

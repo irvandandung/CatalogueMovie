@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cataloguemovie.R
@@ -20,9 +19,7 @@ import com.example.cataloguemovie.TvShows.Detail.DetailTvShow
 import com.example.cataloguemovie.TvShows.Viewmodel.ViewModelTvSearch
 import com.example.cataloguemovie.TvShows.Viewmodel.Viewlisttvshow
 import com.example.cataloguemovie.TvShows.Viewmodel.Viewlisttvshowfactory
-import com.example.cataloguemovie.TvShows.Viewmodel.Viewmodeltvsearchfactory
 import kotlinx.android.synthetic.main.fragment_tv_show.*
-import kotlinx.android.synthetic.main.fragment_tv_show.view.*
 
 class FragmentTvShow : Fragment() {
     private var list = ArrayList<TvShow>()
@@ -56,26 +53,7 @@ class FragmentTvShow : Fragment() {
         rv_tv_show.setHasFixedSize(true)
         showLoading(true)
         code_lang = getString(R.string.codelang)
-        view.Bt_search.setOnClickListener {
-            showLoading(true)
-            getDatawithquery(code_lang, view)
-        }
         getAllDataonFragment(code_lang)
-    }
-
-    private fun getDatawithquery(codeLang: String, view: View) {
-        val query : String = view.Et_search.text.toString()
-        viewModelSearch = ViewModelProviders.of(this, Viewmodeltvsearchfactory(query, codeLang)).get(ViewModelTvSearch::class.java)
-        viewModelSearch.getSetDetailS(query, codeLang)
-        viewModelSearch.getDetailS().observe(this, Observer { tv_show ->
-            if (tv_show != null) {
-                showLoading(false)
-                list = tv_show.tv as ArrayList<TvShow>
-                showRecyclerList()
-            } else {
-                Toast.makeText(context, "Data tidak ada atau internet mati", Toast.LENGTH_LONG).show()
-            }
-        })
     }
 
     private fun showRecyclerList() {

@@ -3,18 +3,13 @@ package com.example.cataloguemovie.Favorite.TvShows
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.cataloguemovie.BuildConfig
 import com.example.cataloguemovie.R
-import com.example.cataloguemovie.TvShows.Adapter.OnItemClickCallback
-import com.example.cataloguemovie.TvShows.Data.TvShow
 import com.example.cataloguemovie.TvShows.Db.TvShowEntity
 import kotlinx.android.synthetic.main.cardview_movie.view.*
-import kotlinx.android.synthetic.main.fragment_favorite_tv_show.view.*
 
 class AdapterFavoriteTvShows(private val listtvshow: List<TvShowEntity>) :
     RecyclerView.Adapter<AdapterFavoriteTvShows.ListViewHolder>() {

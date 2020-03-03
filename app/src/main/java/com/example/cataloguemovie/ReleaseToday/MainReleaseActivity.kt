@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cataloguemovie.Helper.getCurrentDate
 import com.example.cataloguemovie.MainActivity
 import com.example.cataloguemovie.Movies.Adapter.ListMoviesAdapter
 import com.example.cataloguemovie.Movies.Adapter.OnItemClickCallback
@@ -19,7 +18,9 @@ import kotlinx.android.synthetic.main.activity_main2.movieView
 import kotlinx.android.synthetic.main.activity_main2.rv_movies
 
 class MainReleaseActivity : AppCompatActivity() {
-
+    companion object{
+        const val DATE_REALESE = "realese"
+    }
     private var list = ArrayList<Movies>()
     lateinit var code_lang: String
     private lateinit var listMoviesAdapter: ListMoviesAdapter
@@ -27,10 +28,12 @@ class MainReleaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val getDatefromnotif = intent.getStringExtra(DATE_REALESE)
+        supportActionBar?.title = getString(R.string.titlerilis) + getDatefromnotif + "*"
         setContentView(R.layout.activity_main2)
         code_lang = getString(R.string.codelang)
         showLoading(true)
-        viewModelReleaseToday = ViewModelProviders.of(this, ViewModelReleaseTodayFactory(code_lang, getCurrentDate())).get(ViewModelReleaseToday::class.java)
+        viewModelReleaseToday = ViewModelProviders.of(this, ViewModelReleaseTodayFactory(code_lang, getDatefromnotif)).get(ViewModelReleaseToday::class.java)
         viewModelReleaseToday.movie.observe(this, Observer {
           moviee ->
             list = moviee.movie as ArrayList<Movies>
